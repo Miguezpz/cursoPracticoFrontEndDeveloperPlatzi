@@ -48,6 +48,10 @@
        }
 
        .form-container {
+        display: grid;
+        /* grid-template-rows: auto auto 1fr; */
+        justify-items: center; /* Ojo, no es justify-content*/
+
         width: 300px;
        }
 
@@ -59,35 +63,53 @@
         margin-bottom: 48px;
        }
 
-       .form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        /* align-items: center; */
-       }
-
-       .label {
-        margin-bottom: 4px;
-
-        font-size: var(--sm);
-        font-weight: bold;
-       }
-
-       .input {
-        height: 30px;
-        padding: 6px;
+       .title {
         margin-bottom: 12px;
-        border: none;
+
+        font-size: var(--lg);
+        text-align: center;
+       }
+
+       .subtitle {
+        margin-top: 0; 
+        margin-bottom: 32px;
 
         font-size: var(--md);
-        
-        background-color: var(--text-input-field);
+        font-weight: 300;
+        text-align: center;
 
-        border-radius: 8px;
+        color: var(--very-light-pink);
        }
 
-       .input-email {
-        margin-bottom: 22px;
+       .email-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 132px;
+        height: 132px;
+        margin-bottom: 24px;
+
+        background-color: var(--text-input-field);
+        
+        border-radius: 50%;
+       }
+
+       .email-image img {
+        width: 80px;
+       }
+
+       .resend {
+            font-size: var(--sm);
+       }
+
+       .resend span {
+        color: var(--very-light-pink);
+       }
+
+       .resend a {
+        color: var(--hospital-green);
+        text-decoration: none;
        }
 
        .primary-button {
@@ -105,58 +127,14 @@
         cursor: pointer;
        }
 
-       .secondary-button {
-        height: 50px;
-        width: 100%;
-        border: 1px solid var(--hospital-green);
-
-        font-size: var(--md);
-        font-weight: bold;
-
-        background-color: var(--white);
-        color: var(--hospital-green);
-        border-radius: 8px;
-        
-        cursor: pointer;
-       }
-
        .login-button {
         margin-top: 14px;
         margin-bottom: 30px;
        }
 
-       .form a {
-        display: block;
-        margin-bottom: 52px;
-
-        font-size: var(--sm);
-        text-align: center;
-
-        text-decoration: none;
-        color: var(--hospital-green);
-       }
-
-       /* .signup-button {
-        width: 90%;
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-       } */
-
-
-
        @media (max-width: 640px) {
         .logo {
             display: block;
-        }
-
-        .secondary-button {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translate(-50%, 0%);
-
-            width: 300px;
         }
        }
 
@@ -174,24 +152,25 @@
 
             <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
 
-            <form action="/index.html" class="form">
-                
-                <label for="email" class="label">Email address</label>
-                <input type="email" id="email" placeholder="platzi@example.com" 
-                class="input input-email" required>
+            <h1 class="title">Email has been sent!</h1>
+            <p class="subtitle">Please check your inbox for instructions on how to reset the password</p>
 
-                <label for="password" class="label">Password</label>
-                <input type="password" id="password" placeholder="*********" 
-                class="input input-password" required>
+            <div class="email-image">
+                <img src="./icons/email.svg" alt="email">
+            </div>
 
-                <input type="submit" value="Log in" class="primary-button login-button">
+            <button onclick="window.open('/login.html', '_self')" class="primary-button login-button">Log in</button>
 
-                <a href="/new-password.html">Forgot my password</a>
-            </form>
-
-            <button class="secondary-button signup-button"
-            onclick="window.open('/new-account.html', '_self')">Sign up</button>
+            <p class="resend">
+                <span>Didn't receive the email?</span>
+                <a href="/email.html">Resend</a>
+            </p>
         </div>
     </div>
 </body>
 </html>
+
+<!-- Código aprendido
+ 
+    justify-items: no se necesita display flex
+-->
