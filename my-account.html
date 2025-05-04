@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="./logos/logo_bota_fora.svg" type="img">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -107,6 +108,7 @@
         font-size: var(--md);
         margin: 8px 0 32px 0;
        }
+    
        .secondary-button {
         height: 50px;
         width: 100%;
@@ -153,23 +155,56 @@
 
             <h1 class="title">My account</h1>
 
-            <form action="/new-account.html" class="form">
+            <div action="/new-account.html" class="form">
 
                 <div>
                     <label for="name" class="label">Name</label>
-                    <p class="value">Camila Yokoo</p>
+                    <input type="text" class="value" value="Camila Yokoo" id="name" disabled>
 
                     <label for="email" class="label">Email</label>
-                    <p class="value">camilayokoo@gmail.com</p>
+                    <input type="email" class="value" value="camilayokoo@gmail.com" id="email" disabled>
 
                     <label for="password" class="label">Password</label>
-                    <p class="value">*********</p>
+                    <input type="password" class="value" value="*********" id="password" disabled>
                 </div>
 
                 <input type="submit" value="Edit" class="secondary-button login-button">
-            </form>
+            </div>
 
         </div>
     </div>
-</body>
+
+    <script>
+
+        const editButton = document.querySelector('.login-button')
+        const inputName = document.getElementById('name')
+        const inputEmail = document.getElementById('email')
+        const inputPassword = document.getElementById('password')
+
+        function disableInputs () {
+            inputName.disabled = true
+            inputEmail.disabled = true
+            inputPassword.disabled = true
+        }
+
+        function enableInputs () {
+            inputName.disabled = false
+            inputEmail.disabled = false
+            inputPassword.disabled = false
+        }
+
+
+        editButton.addEventListener('click', () => {
+
+            if (editButton.value === 'Edit') {
+                editButton.value = 'Save'
+                enableInputs()
+                
+            } else {
+                editButton.value = 'Edit'
+                disableInputs()
+            }
+        })
+        </script>
+    </body>
 </html>
