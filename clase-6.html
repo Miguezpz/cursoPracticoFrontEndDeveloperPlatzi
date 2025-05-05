@@ -40,10 +40,82 @@
             font-family: 'Quicksand', sans-serif;
         }
 
-        .product-card img {
-            width: 150px;
-            height: 100px;
+        .cards-container {
+            --card-size: 240px;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 240px);
+
+            place-content: center;
+            gap: 26px;
         }
+
+        .product-card {
+            width: var(--card-size);
+        }
+
+        .product-card > img {
+            width: var(--card-size);
+            height: var(--card-size);
+
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-top: 12px;
+        }
+
+        .product-info figure {
+            margin: 0;
+        }
+
+        .product-info figure img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .product-info div p:nth-child(1) {
+            margin: 0 0 4px;
+
+            font-weight: bold;
+            font-size: var(--md);
+        }
+
+        .product-info div p:nth-child(2) {
+            margin: 0 0 4px;
+            
+            font-size: var(--sm);
+            
+            color: var(--very-light-pink);
+        }
+
+        @media (max-width: 640px) {
+
+            .cards-container {
+                --card-size: 140px;
+                grid-template-columns: repeat(auto-fill, var(--card-size));
+            }
+
+            /* 
+            
+            Al modificar el valor de la variable --card-size, modificamos el mismo valor
+            en el resto de los elementos que usan la variable. SMART!!!
+
+            .product-card {
+                width: 140px;
+            }
+
+            .product-card > img {
+                width: 140px;
+                height: 140px;
+            } */
+        }
+
 
     </style>
 </head>
@@ -54,7 +126,29 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
+
+                <div class="product-info">
+                    <div>
+                        <p>$120,00</p>
+                        <p>Bike</p>
+                    </div>
+
+                    <figure>
+                        <img src="./icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="product-card">
+
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -70,7 +164,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -86,7 +180,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -102,7 +196,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -118,7 +212,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -134,7 +228,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -150,7 +244,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -166,7 +260,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -182,7 +276,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -198,7 +292,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -214,7 +308,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -230,7 +324,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -246,7 +340,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -262,7 +356,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -278,7 +372,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -294,7 +388,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -310,7 +404,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -326,7 +420,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
@@ -342,23 +436,7 @@
 
             <div class="product-card">
 
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
-
-                <div class="product-info">
-                    <div>
-                        <p>$120,00</p>
-                        <p>Bike</p>
-                    </div>
-
-                    <figure>
-                        <img src="./icons/bt_add_to_cart.svg" alt="">
-                    </figure>
-                </div>
-            </div>
-
-            <div class="product-card">
-
-                <img src="https://images.pexels.com/photos/681795/pexels-photo-681795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="product-img">
+                <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="product-img">
 
                 <div class="product-info">
                     <div>
