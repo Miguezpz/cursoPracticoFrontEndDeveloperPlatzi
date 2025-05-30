@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="./logos/logo_bota_fora.svg" type="img">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+
+        /* 
+            Posicionamiento: position, display, z-index
+
+            Box Model: w, h, padding, margin, border, box-sizing.
+
+            Tipografia: font-..., text-align, font-size.
+
+            Visuales como colores, border-radius, box-shadow, background-color, color.
+
+            Otros: gap, pseudoclass (hover), cursos:pointer, transition.
+        */
+    
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --dark: #232830;
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7; 
+            --hospital-green: #ACD9B2;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            list-style: none;
+            text-decoration: none;
+        } */
+
+        body {
+            /* display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly; */
+
+
+            margin: 30px 0;
+            /* margin-block: 1lh; */
+
+            font-family: 'Quicksand', sans-serif;
+
+            background-color: var(--white);
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .my-order {
+            display: grid;
+            place-items: center;
+
+            width: 100%;
+            height: 100vh;
+        }
+
+        .title {
+            font-size: var(--lg);
+            margin-bottom: 40px;
+        }
+
+       .my-order-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto; /*auto para elementos, 1fr para espacio vacio*/
+            width: 300px;
+        } 
+
+        .my-order-content {
+            display: flex;
+            flex-direction: column;
+        } 
+
+        .order {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 24px;
+            margin-bottom: 24px;
+
+            background-color: var(--text-input-field); 
+
+            border-radius: 8px;
+        }
+
+        .order p:nth-child(1) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .order p:nth-child(2) {
+            font-weight: bold;
+        }
+
+        .order p span:nth-child(1) {
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+        .order p span:nth-child(2) {
+            font-size: var(--sm);
+            color: var(--very-light-pink);
+        }
+
+        .shopping-cart {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .shopping-cart figure {
+            display: flex;
+
+            margin: 0;
+        }
+
+        .shopping-cart figure img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 20px;
+        } 
+        
+        .shopping-cart p:nth-child(2) {
+            color: var(--very-light-pink);
+        } 
+
+        .shopping-cart p:nth-child(3) {
+            font-size: var(--md);
+            font-weight: bold;
+        } 
+
+    </style>
+</head>
+<body>
+
+    <div class="my-order">
+
+        <div class="my-order-container">
+
+            <h1 class="title">My order</h1>
+
+            <div class="my-order-content">
+
+                <div class="order">
+                    <p>
+                        <span>05.18.2025</span>
+                        <span>4 articles</span>
+                    </p>
+
+                    <p>$152.00</p>
+                </div>
+
+                <div class="shopping-cart">
+                    <figure>
+                        <img src="https://images.pexels.com/photos/3283142/pexels-photo-3283142.jpeg?
+                        auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="item-img">
+                    </figure>
+
+                    <p>Clock</p>
+                    <p>$30.00</p>
+                </div>
+
+                <div class="shopping-cart">
+                    <figure>
+                        <img src="https://images.pexels.com/photos/2078268/pexels-photo-2078268.jpeg?
+                        auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="item-img">
+                    </figure>
+
+                    <p>Watch</p>
+                    <p>$80.00</p>
+                </div>
+
+                <div class="shopping-cart">
+                    <figure>
+                        <img src="https://images.pexels.com/photos/5664491/pexels-photo-5664491.jpeg?
+                        auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="item-img">
+                    </figure>
+
+                    <p>Rubik's cube</p>
+                    <p>$12.00</p>
+                </div>
+
+                <div class="shopping-cart">
+                    <figure>
+                        <img src="https://images.pexels.com/photos/682089/pexels-photo-682089.jpeg?
+                        auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="item-img">
+                    </figure>
+
+                    <p>Kettlebell</p>
+                    <p>$30.00</p>
+                </div>   
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>   
